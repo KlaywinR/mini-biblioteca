@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Lista de Livros</title>
+    <link rel='stylesheet' href='main.css'>
+</head>
+<body>
+    <h1>Lista de Livros Antigos</h1>
+
+    {% for livro in livros %}
+         
+        <h2>{{livro.title}}</h2>
+
+        <p>
+            <strong>
+                Autor:
+            </strong> {{livro.author}}
+        </p>
+        <p>
+            <strong>
+                Ano de Publicação do Livro: 
+            </strong> {{livro.year_of_publication}}
+        </p>
+
+        <hr>
+
+        {% empty %}
+        <p>
+            Nenhum livro foi cadastrado
+        </p>
+        {% empty %}
+
+</body>
+</html>
