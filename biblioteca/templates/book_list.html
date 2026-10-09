@@ -9,18 +9,15 @@
     <h1>Lista de Livros</h1>
 
     {% for book in books %}
-         
-        <h2>{{book.title}}</h2>
+
+        <h2>{{ book.title }}</h2>
 
         <p>
-            <strong>
-                Autor:
-            </strong> {{book.author}}
+            <strong>Autor:</strong>
+            <a href="{% url 'author_detail' book.author.pk %}">{{ book.author.name }}</a>
         </p>
         <p>
-            <strong>
-                Ano de Publicação do Livro: 
-            </strong> {{book.year_of_publication}}
+            <strong>Ano de Publicação do Livro:</strong> {{ book.year_of_publication }}
         </p>
 
     {% endfor %}
